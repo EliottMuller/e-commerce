@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+app_homepage:
+    path: /{_locale}
+    controller: App\Controller\DefaultController::index
+    defaults: { _locale: 'fr' }
+    requirements:
+        _locale: en|fr
+change_language:
+    path: /change-language/{locale}
+    controller: App\Controller\LanguageController::changeLanguage
+credit_cards:
+    path: /credit-cards
+    controller: App\Controller\CreditCardController::index
